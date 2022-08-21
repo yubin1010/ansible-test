@@ -1,0 +1,11 @@
+- hosts: all
+  remote_user: root
+  tasks:
+  - name: Create a test directory if it does not exist
+    become: yes
+    file:
+      owner: root
+      group: root
+      path: /etc/ansible/test
+      state: directory
+      mode: 0755
